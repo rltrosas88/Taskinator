@@ -14,6 +14,14 @@ var taskFormHandler = function(event) {
     //console.dir(taskNameInput);
     //console.log(taskNameInput);
 
+    //check if input values are empty strings
+    if (!taskNameInput || !taskTypeInput){
+        alert("You need to fill out the task form!");
+        return false;
+    }
+    //reset method is designed specifically for the form element and wont work on any other element
+    formEl.reset();
+
     //package up data as an object
     var taskDataObj = {
         name: taskNameInput,
